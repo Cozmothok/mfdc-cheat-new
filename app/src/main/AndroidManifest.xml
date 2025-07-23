@@ -1,48 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
-    <application
-        android:allowBackup="true"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar"
-        tools:targetApi="31">
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <service
-            android:name=".OverlayService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <!-- Xposed Module Meta-Data -->
-        <meta-data
-            android:name="xposedmodule"
-            android:value="true" />
-        <meta-data
-            android:name="xposeddescription"
-            android:value="MFDC Premium Unlocker" />
-        <meta-data
-            android:name="xposedminversion"
-            android:value="82" />
-
-    </application>
-
-</manifest>
+    1 <?xml version="1.0" encoding="utf-8"?>
+    2 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    3     xmlns:tools="http://schemas.android.com/tools"
+    4     package="com.mfdcs.crack"> <!-- Ensure this package name matches your app's package -->
+    5
+    6     <!-- Permissions from your original manifest -->
+    7     <uses-permission android:name="android.permission.INTERNET" />
+    8     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    9     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   10     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+   11     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+   12     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+   13         tools:ignore="ScopedStorage" />
+   14     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+   15     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+   16         tools:ignore="ScopedStorage" />
+   17
+   18     <application
+   19         android:allowBackup="true"
+   20         android:label="@string/app_name"
+   21         android:supportsRtl="true"
+   22         android:theme="@android:style/Theme.NoTitleBar"  tools:targetApi="31">
+   23         <!-- Removed dataExtractionRules, fullBackupContent, icon, roundIcon to avoid resource errors -->
+   24         <!-- Changed theme to a generic one to avoid missing style errors -->
+   25
+   26         <activity
+   27             android:name=".MainActivity"
+   28             android:exported="true"
+   29             android:theme="@android:style/Theme.NoTitleBar">
+   30             <intent-filter>
+   31                 <action android:name="android.intent.action.MAIN" />
+   32                 <category android:name="android.intent.category.LAUNCHER" />
+   33             </intent-filter>
+   34         </activity>
+   35
+   36         <service
+   37             android:name=".OverlayService"
+   38             android:enabled="true"
+   39             android:exported="false" />
+   40
+   41         <!-- Xposed Module Meta-Data -->
+   42         <meta-data
+   43             android:name="xposedmodule"
+   44             android:value="true" />
+   45         <meta-data
+   46             android:name="xposeddescription"
+   47             android:value="MFDC Premium Unlocker Module" />
+   48         <meta-data
+   49             android:name="xposedminversion"
+   50             android:value="82" />
+   51         <!-- THIS IS THE CRUCIAL LINE FOR LSPosed TO RECOGNIZE THE TARGET APP -->
+   52         <meta-data
+   53             android:name="xposedscope"
+   54             android:resource="@array/xposed_scope" />
+   55
+   56     </application>
+   57
+   58 </manifest>
