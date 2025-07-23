@@ -19,7 +19,9 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar"  tools:targetApi="31">
+        android:theme="@android:style/Theme.NoTitleBar"
+        tools:targetApi="31">
+        
         <!-- Removed dataExtractionRules, fullBackupContent, icon, roundIcon to avoid resource errors -->
         <!-- Changed theme to a generic one to avoid missing style errors -->
 
@@ -56,3 +58,4 @@
     </application>
 
 </manifest>
+
