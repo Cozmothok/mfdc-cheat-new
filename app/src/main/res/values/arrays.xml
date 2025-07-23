@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="xposed_scope">
-        <item>com.mfdcs</item> <!-- Package name of the target app -->
+        <item>com.mfdcs</item> <!-- The package name of the target app (MFDC) -->
     </string-array>
 </resources>
