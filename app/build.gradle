@@ -29,6 +29,6 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    // THIS IS THE CORRECTED LINE FOR JITPACK
-    compileOnly 'com.github.rovo89.XposedBridge:api:82'
+    // THIS IS THE CORRECTED LINE FOR XPOSED API
+    compileOnly 'de.robv.android.xposed:api:82'
 }
